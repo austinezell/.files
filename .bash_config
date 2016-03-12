@@ -21,7 +21,7 @@ export PATH=$GOPATH:$PATH:/usr/local/
 
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib32:/lib:$HOME/bin
 export PATH=$PATH:$HOME/.gitconfig
-export PS1="\W \$(__git_ps1)$ "
+export PS1="\W \$(__git_ps1)$:"
 
 if [ -f /etc/bash_completion ]; then
  . /etc/bash_completion
