@@ -1,0 +1,28 @@
+# testStringBananaCreme
+
+source $HOME/.bash_aliases
+
+for file in /etc/bash_completion.d/* ; do
+    source "$file"
+done
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="/home/austin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# add gopath
+
+export GOPATH=$HOME/gowork
+export PATH=$GOPATH:$PATH:/usr/local/
+
+#adds things that should be in PATH
+#in case i'm an idiot again and rm -rf
+
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib32:/lib:$HOME/bin
+export PATH=$PATH:$HOME/.gitconfig
+export PS1="\W \$(__git_ps1)$ "
+
+if [ -f /etc/bash_completion ]; then
+ . /etc/bash_completion
+fi
