@@ -5,16 +5,17 @@ alias gcm="git commit -m"
 alias gpo="git push origin HEAD"
 alias gph="git push heroku master"
 alias naut="nautilus ."
-alias ping="echo \"pong\""
 alias b="cd .."
 alias sagi="sudo apt-get install"
 alias nis="npm install --save"
-alias sassy="nis gulp gulp-sass gulp-minify-css gulp-autoprefixer && cp $HOME/templates/gulpfile.js ./"
+alias sassy="nis gulp gulp-sass gulp-clean-css gulp-autoprefixer && cp $HOME/templates/gulpfile.js ./ && mkdir scss && touch ./sass/style.scss"
 alias ca="printf '\033\143'"
 alias nig="npm install --global"
 alias bis="bower install --save"
-alias nconfig="nig gulp nodemon serve lite-server webpack bower typescript typings"
-
+alias nconfig="nig gulp nodemon serve lite-server webpack bower express-generator typescript typings"
+alias mchef="~/mongoChef/bin/mongochef.sh &"
+alias wwd="webpack -w -d"
+alias getWP="nis webpack babel-core babel-loader babel-preset-es2015 && cp $HOME/templates/webpack.config.js ./"
 
 alias g='git'
 alias ga='git add -A'
