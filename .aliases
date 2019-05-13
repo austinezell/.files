@@ -1,31 +1,36 @@
 # testStringBananaCreme
 
-alias gac="git add -A :/ && git commit -m"
-alias gcm="git commit -m"
-alias gpo="git push origin HEAD"
-alias gph="git push heroku master"
-alias naut="nautilus ."
-alias b="cd .."
-alias sagi="sudo apt-get install"
-alias nis="npm install --save"
-alias sassy="nis gulp gulp-sass gulp-clean-css gulp-autoprefixer && cp $HOME/templates/gulpfile.js ./ && mkdir scss && touch ./sass/style.scss"
-alias ca="printf '\033\143'"
-alias nig="npm install --global"
-alias bis="bower install --save"
-alias nconfig="nig gulp nodemon serve lite-server webpack bower express-generator typescript typings"
-alias mchef="~/mongoChef/bin/mongochef.sh &"
-alias wwd="webpack -w -d"
-alias getWP="nis webpack babel-core babel-loader babel-preset-es2015 && cp $HOME/templates/webpack.config.js ./"
+alias rs='source ~/.bashrc'
+alias iamthecaptainnow='sudo spctl --master-disable'
 
-alias g='git'
+# term
+alias b="cd .."
+alias ca='clear && printf "\e[3J"'
+
+# linux
+alias naut="nautilus ."
+alias sag="sudo apt-get"
+alias sagi="sag install"
+
+# npm
+alias nis="npm install --save"
+alias nig='npm install --global'
+alias ns='npm start'
+alias nis='npm install --save'
+alias nisd='npm install --save-dev'
+
+# git
+alias tug='git pull origin $(curr) --rebase'
+alias gup='git checkout master && tug'
+alias delcur='git push origin --delete --no-verify $(curr)'
+alias gac='git add -A :/ && git commit -m'
+alias gacnow='git add -A :/ && git commit --no-verify -m '
+alias gcm='git commit -m'
+alias gcmnow='git commit --no-verify -m'
+alias gpo='git push origin HEAD'
+alias gponow='git push origin HEAD --no-verify'
 alias ga='git add -A'
-alias gb='git branch -a'
 alias gc='git commit -v'
-alias gca='git commit -a -v'
-alias gco="git checkout"
+alias gco='git checkout'
 alias gd='git diff'
-alias gds='git diff --staged'
-alias gdh='git diff HEAD'
-alias gsh='git push'
-alias gll='git pull'
-alias gst='git status -sb'
+alias gst='git status'
