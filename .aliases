@@ -1,16 +1,21 @@
 # testStringBananaCreme
 
+# restart
 alias rs='source ~/.bashrc'
-alias iamthecaptainnow='sudo spctl --master-disable'
 
 # term
 alias b="cd .."
 alias ca='clear && printf "\e[3J"'
 
-# linux
+# deb
 alias naut="nautilus ."
 alias sag="sudo apt-get"
 alias sagi="sag install"
+
+# mac
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias iamthecaptainnow='sudo spctl --master-disable'
 
 # npm
 alias nis="npm install --save"
@@ -18,13 +23,14 @@ alias nig='npm install --global'
 alias ns='npm start'
 alias nis='npm install --save'
 alias nisd='npm install --save-dev'
+alias nconfig='nig eslint lite-server'
 
 # git
-alias tug='git pull origin $(curr) --rebase'
 alias gup='git checkout master && tug'
+alias tug='git pull origin $(curr) --rebase'
 alias delcur='git push origin --delete --no-verify $(curr)'
 alias gac='git add -A :/ && git commit -m'
-alias gacnow='git add -A :/ && git commit --no-verify -m '
+alias gacnow='git add -A :/ && gcmnow'
 alias gcm='git commit -m'
 alias gcmnow='git commit --no-verify -m'
 alias gpo='git push origin HEAD'
@@ -34,3 +40,5 @@ alias gc='git commit -v'
 alias gco='git checkout'
 alias gd='git diff'
 alias gst='git status'
+# @TODO make into function that takes branch as arg
+alias gitclean='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'

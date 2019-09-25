@@ -25,3 +25,12 @@ add-remote () {
   fi
   git remote add origin "git@github.com:austinezell/$repo_name.git"
 }
+
+lastBranches(){
+  if [ "$1" ]; then
+    BRANCH_COUNT=$1
+  else 
+    BRANCH_COUNT=15
+  fi
+  git for-each-ref --count=$BRANCH_COUNT --sort=-committerdate refs/heads/ --format='%(refname:short)'
+}
