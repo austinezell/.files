@@ -13,7 +13,7 @@ if [ ! -f $HOME/.bash_aliases ]; then
 fi
 
 if ! grep -q "testStringBananaCreme" $HOME/.bash_aliases; then
-  cat ./aliases >> $HOME/.bash_aliases
+  cat ./.aliases >> $HOME/.bash_aliases
 fi
 
 echo 'Adding Functions'
