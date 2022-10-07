@@ -18,7 +18,6 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias iamthecaptainnow='sudo spctl --main-disable'
 
 # npm
-alias nis="npm install --save"
 alias nig='npm install --global'
 alias ns='npm start'
 alias nis='npm install --save'

@@ -1,7 +1,16 @@
 # testStringBananaCreme
 
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
 curr(){
-  echo $(git rev-parse --abbrev-ref HEAD)
+  OUTPUT=$(git rev-parse --abbrev-ref HEAD)
+  if [ "$1" ]; then
+    echo $OUTPUT | tr '[:upper:]' '[:lower:]'
+  else
+    echo $OUTPUT  
+  fi
 }
 
 killPort () {
@@ -14,7 +23,7 @@ zzz (){
   else
     repo_name=${PWD##*/}
   fi
-  curl -u $USER:$PASSWORD https://api.github.com/user/repos -d '{ "name": "'"$repo_name"'" }'
+  curl -u $GITHUB_USERNAME:$GITHUB_PW https://api.github.com/user/repos -d '{ "name": "'"$repo_name"'" }'
 }
 
 add-remote () {
@@ -26,11 +35,15 @@ add-remote () {
   git remote add origin "git@github.com:austinezell/$repo_name.git"
 }
 
-lastBranches(){
+lBranches(){
   if [ "$1" ]; then
     BRANCH_COUNT=$1
   else 
     BRANCH_COUNT=15
   fi
   git for-each-ref --count=$BRANCH_COUNT --sort=-committerdate refs/heads/ --format='%(refname:short)'
+}
+
+cbr() {
+  echo "($(curr true))"
 }
