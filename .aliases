@@ -25,8 +25,8 @@ alias nisd='npm install --save-dev'
 alias nconfig='nig eslint lite-server'
 
 # git
-alias gup='git checkout main && tug'
-alias tug='git pull origin $(curr) --rebase'
+alias gup='git checkout $(getGitMain) && MERGE_STRATEGY=rebase tug'
+alias tug='git pull origin $(curr) --${MERGE_STRATEGY:-ff}'
 alias delcur='git push origin --delete --no-verify $(curr)'
 alias gac='git add -A :/ && git commit -m'
 alias gacnow='git add -A :/ && gcmnow'
@@ -39,5 +39,5 @@ alias gc='git commit -v'
 alias gco='git checkout'
 alias gd='git diff'
 alias gst='git status'
-# @TODO make into function that takes branch as arg
-alias gitclean='git branch --merged main | grep -v "\* main" | xargs -n 1 git branch -d'
+
+alias gitclean='git branch --merged $(getGitMain) | grep -v "\* $(getGitMain)" | xargs -n 1 git branch -d'

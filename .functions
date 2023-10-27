@@ -35,7 +35,7 @@ add-remote () {
   git remote add origin "git@github.com:austinezell/$repo_name.git"
 }
 
-lBranches(){
+lb(){
   if [ "$1" ]; then
     BRANCH_COUNT=$1
   else 
@@ -46,4 +46,8 @@ lBranches(){
 
 cbr() {
   echo "($(curr true))"
+}
+
+getGitMain(){
+  git remote show origin | awk '/HEAD branch/ {print $NF}'
 }
