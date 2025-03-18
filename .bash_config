@@ -1,6 +1,6 @@
-# testStringBananaCreme
+#! /usr/bin/bash
 
+FILES_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source $FILES_DIR/.functions
+source $FILES_DIR/.aliases
 export PS1="\W\$(__git_ps1):"
-
-source ~/.bash_functions
-source ~/.bash_aliases
